@@ -20,13 +20,13 @@ int main(int argc, char **argv){
         case '}'  : out = pop(&s);
                     if(out != '{'){
                       check = 1;
-                      break;
                     }
+                    break;
         case ']'  : out = pop(&s);
                     if(out != '['){
-                      check = 1;
-                      break;
+                      check = 1; 
                     }
+                    break;
        }
 /*      if(argv[i][j] == '{' || argv[i][j] == '['){
           push(&s,argv[i][j]);
@@ -35,18 +35,19 @@ int main(int argc, char **argv){
           out = pop(&s);
           if(out != '{'){
             check = 1;
-            break;
           }
+          break;
         }
         if(argv[i][j] == ']'){
           out = pop(&s);
           if(out != '['){
             check = 1;
-            break;
           }
+          break;
         }*/
      
   }
+  printf("%d",s.size);
   if(s.size>0){
     printf("The parentheses do not match successfully in %s\n", argv[i]);
     check=0;
