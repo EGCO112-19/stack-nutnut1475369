@@ -48,11 +48,11 @@ int main(int argc, char **argv){
      
   }
   if(s.size>0){
-    printf("The parentheses does not match successfully in %s\n", argv[i]);
+    printf("The parentheses do not match successfully in %s\n", argv[i]);
     check=0;
     pop_all(&s);
   }else if(check==1){
-    printf("The parentheses does not match successfully in %s\n", argv[i]);
+    printf("The parentheses do not match successfully in %s\n", argv[i]);
   }else{
     printf("The parentheses match successfull in %s\n",argv[i]);
   }
