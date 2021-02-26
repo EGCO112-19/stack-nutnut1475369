@@ -11,30 +11,40 @@ int main(int argc, char **argv){
   int check=0;
   char out;
   for(int i=1;i<argc;i++){
-     for(int j=0;j<strlen(argv[i]);j++){
-        switch(argv[i][j]){
-         case '{':push(&s, argv[i][j]);
-                  break;
-         case '[':push(&s, argv[i][j]);
-                  break;
-         case '}':out = pop(&s);
-                  if(out != '{'){check = 1;break;}
-         case ']':out = pop(&s);
-                  if(out != '['){check = 1; break;}
+    for(int j=0;j<strlen(argv[i]);j++){
+      switch(argv[i][j]){
+        case '{'  : push(&s, argv[i][j]);
+                    break;
+        case '['  : push(&s, argv[i][j]);
+                    break;
+        case '}'  : out = pop(&s);
+                    if(out != '{'){
+                      check = 1;
+                      break;
+                    }
+        case ']'  : out = pop(&s);
+                    if(out != '['){
+                      check = 1;
+                      break;
+                    }
        }
 /*      if(argv[i][j] == '{' || argv[i][j] == '['){
-         push(&s,argv[i][j]);
-         }
-      if(argv[i][j] == '}'){
-        out = pop(&s);
-        if(out != '{'){check = 1;break;
+          push(&s,argv[i][j]);
         }
-      }
-      if(argv[i][j] == ']'){
-        out = pop(&s);
-        if(out != '['){check = 1; break;
+        if(argv[i][j] == '}'){
+          out = pop(&s);
+          if(out != '{'){
+            check = 1;
+            break;
+          }
         }
-      }*/
+        if(argv[i][j] == ']'){
+          out = pop(&s);
+          if(out != '['){
+            check = 1;
+            break;
+          }
+        }*/
      
   }
   if(s.size>0){
